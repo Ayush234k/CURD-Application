@@ -1,0 +1,27 @@
+form{
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+}
+input{
+    width: 70%;
+    height: 50px;
+    border-radius: 5px;
+    /* border: none; */
+    margin-top: 10px;
+}
+input::placeholder{
+    margin-left: 10px;
+}
+button{
+    width: 70%;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: white;
+    background-color: rgb(48, 48, 241);
+}

@@ -21,9 +21,11 @@ export const Signup: React.FC = () => {
 
     return(
         <form onSubmit={handleSignup}>
+            <h1>SignUp</h1>
             <input type="email" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} required></input>
             <input type="password" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} required></input>
             <button type="submit">SIGNUP</button>
+            <p onClick={() => navigate("/login")}>Login</p>
             {/* <button type="button" onClick={handleSubmit}>Signup</button> */}
         </form>
     )

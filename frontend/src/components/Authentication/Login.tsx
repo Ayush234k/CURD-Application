@@ -26,6 +26,7 @@ export const Login: React.FC = () => {
 
     return(
         <form onSubmit={handleSubmit}>
+            <h1>Login</h1>
             <input type="email" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} required></input>
             <input type="password" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} required></input>
             <button type="submit">LOGIN</button>

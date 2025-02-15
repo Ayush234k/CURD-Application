@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import User from '../models/userModel';
+import DashboardCard from '../models/dashboardModel';
 
 export const Signup = async (req: Request, res: Response) => {
     try{
@@ -65,3 +66,48 @@ export const updatePassword = async (req: Request, res: Response) => {
         res.status(500).json({err : err});
     }
 }
+
+//---------------------------------------------------------------------------------------------------
+
+export const handleAdd = async (req: Request, res: Response) => {
+  try {
+    const { name, email, phone } = req.body;
+    const newCard = new DashboardCard({ name, email, phone });
+    const savedCard = await newCard.save();
+    res.status(201).json(savedCard);
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+};
+
+
+export const getAllCards = async (_req: Request, res: Response) => {
+  try {
+    const cards = await DashboardCard.find();
+    res.status(200).json(cards);
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+};
+
+
+export const handleDelete = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await DashboardCard.findByIdAndDelete(id);
+    res.status(200).json({ msg: "Card Deleted" });
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+};
+
+
+export const handleUpdate = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const updatedCard = await DashboardCard.findByIdAndUpdate(id, req.body, { new: true });
+    res.status(200).json(updatedCard);
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+};

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { signup } from "../connection/api";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 
 export const Signup: React.FC = () => {
@@ -20,12 +21,12 @@ export const Signup: React.FC = () => {
     }
 
     return(
-        <form onSubmit={handleSignup}>
-            <h1>SignUp</h1>
-            <input type="email" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} required></input>
-            <input type="password" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} required></input>
-            <button type="submit">SIGNUP</button>
-            <p onClick={() => navigate("/login")}>Login</p>
+        <form id="login-form" onSubmit={handleSignup}>
+            <h1 id="login-h1">SignUp</h1>
+            <input id="login-input" type="email" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} required></input>
+            <input id="login-input" type="password" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} required></input>
+            <button id="login-btn" type="submit">SIGNUP</button>
+            <p id="login-p" onClick={() => navigate("/login")}>Login</p>
             {/* <button type="button" onClick={handleSubmit}>Signup</button> */}
         </form>
     )

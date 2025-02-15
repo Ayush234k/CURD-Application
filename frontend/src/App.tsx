@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { Login } from './components/Authentication/Login';
 import { Signup } from './components/Authentication/Signup';
-import { Dashboard } from './components/Dashboard';
+import Dashboard from './components/Dashboard';
 import "./App.css";
 
 
@@ -16,7 +16,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
     </BrowserRouter>
-    </div>
+    </div> 
   );
 }
 

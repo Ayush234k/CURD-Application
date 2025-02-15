@@ -19,17 +19,24 @@ export const Login: React.FC = () => {
                 alert("Login Failed");
             }
         }
-        catch(err){
-            console.log("Error { Login }");
+        catch(err: any){
+            if(err.status === 404){
+                alert("Invalid Credentials");
+            }
+            else{
+                console.log("Error : ", err);
+                alert("Something went wrong, please try again");
+            }
         }
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form id="login-form" onSubmit={handleSubmit}>
             <h1>Login</h1>
-            <input type="email" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} required></input>
-            <input type="password" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} required></input>
-            <button type="submit">LOGIN</button>
+            <input id="login-input" type="email" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} required></input>
+            <input id="login-input" type="password" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} required></input>
+            <button id="login-btn" type="submit">LOGIN</button>
+            <p id="login-p" onClick={() => navigate("/")}>Signup</p>
             {/* <button type="button" onClick={handleSubmit}>Login</button> */}
         </form>
     )

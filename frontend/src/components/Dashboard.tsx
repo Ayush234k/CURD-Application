@@ -30,6 +30,11 @@ const Dashboard: React.FC = () => {
   };
 
   const addCard = async () => {
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      alert("All fields are required!");
+      return;
+    }
+    
     try {
       const { data } = await handleAdd({ name, email, phone });
       setCards([...cards, data]);

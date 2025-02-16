@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid red;
+    background: linear-gradient(90deg, rgba(96,2,159,1) 2%, rgba(84,116,253,1) 57%, rgba(69,252,238,1) 100%);
 }
 #d-add-panel{
     width: 25%;
@@ -20,7 +20,7 @@
     top: 0;
     overflow-y: auto;
     margin: 36px 0px 0px 35px;
-    border: 1px solid blue;
+    background: white;
 }
 #d-add-panel h1{
     color: black;
@@ -34,7 +34,6 @@
     right: 0; 
     top: 0;
     overflow-y: auto;
-    border: 1px solid red;
 }
 #d-input{
     width: 80%;
@@ -52,9 +51,9 @@
     margin-top: 15px;
     border: none;
     border-radius: 10px;
-    background: #3748e4;
+    background: rgb(63, 98, 255);
     color: white;
     font-size: 15px;
     cursor: pointer;
-    box-shadow: 2px 3px 3px 0.5px rgba(0, 0, 155, 0.5);
+    box-shadow: 2px 3px 3px 0.5px rgba(3, 3, 90, 0.5);
 }
